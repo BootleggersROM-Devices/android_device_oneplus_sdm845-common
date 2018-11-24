@@ -19,6 +19,7 @@ package org.lineageos.settings.device;
 
 import android.Manifest;
 import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -33,6 +34,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.Vibrator;
@@ -52,6 +54,7 @@ import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = KeyHandler.class.getSimpleName();
+    private static final boolean DEBUG = true;
     private static final int GESTURE_REQUEST = 1;
     private static String FPNAV_ENABLED_PROP = "sys.fpnav.enabled";
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
@@ -87,6 +90,20 @@ public class KeyHandler implements DeviceKeyHandler {
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
     private boolean isOPCameraAvail;
+    private boolean mDispOn;
+
+    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
+         @Override
+         public void onReceive(Context context, Intent intent) {
+             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+                 mDispOn = true;
+                 onDisplayOn();
+             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+                 mDispOn = false;
+                 onDisplayOff();
+             }
+         }
+    };
 
     public KeyHandler(Context context) {
         mContext = context;
@@ -148,6 +165,22 @@ public class KeyHandler implements DeviceKeyHandler {
     public boolean canHandleKeyEvent(KeyEvent event) {
         return false;
         }
+
+    private void onDisplayOn() {
+        if (DEBUG) Log.i(TAG, "Display on");
+        if ((mClientObserver == null) && (isOPCameraAvail)) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
+    }
+
+    private void onDisplayOff() {
+        if (DEBUG) Log.i(TAG, "Display off");
+        if (mClientObserver != null) {
+            mClientObserver.stopWatching();
+            mClientObserver = null;
+        }
+    }
 
     private class ClientPackageNameObserver extends FileObserver {
 
