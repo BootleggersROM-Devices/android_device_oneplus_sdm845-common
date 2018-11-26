@@ -112,11 +112,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.qcom
 
+
+# ARStickers
+TARGET_INCLUDE_STOCK_ARCORE := true
+PRODUCT_PACKAGES += \
+    ARStickersMod
+
 # Prebuilts
 PRODUCT_PACKAGES += \
     OnePlusCamera \
     OnePlusGallery \
-    OnePlusCameraService
+    OnePlusCameraService \
+    MGC
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh  \
