@@ -118,7 +118,7 @@ PRODUCT_PACKAGES += \
 TARGET_INCLUDE_STOCK_ARCORE := true
 PRODUCT_PACKAGES += \
     ARStickersMod \
-    ARCore \
+    ARCore
 
 # Prebuilts
 PRODUCT_PACKAGES += \
