@@ -1,0 +1,22 @@
+[
+  {
+    "repository"  : "franciscofranco/enchilada",
+    "target_path" : "kernel/oneplus/sdm845",
+     "branch"      : "pie"
+  },
+  {
+    "repository"  : "AyanC1/vendor_oneplus",
+    "target_path" : "vendor/oneplus",
+    "branch"      : "pie"
+  },
+  {
+    "repository"  : "LineageOS/android_packages_resources_devicesettings",
+    "target_path" : "packages/resources/devicesettings",
+    "branch"      : "lineage-16.0"
+  },
+  {
+    "repository": "AyanC1/clang-prebuilt",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-7.0.2",
+    "branch"      : "pie"
+  }
+]
