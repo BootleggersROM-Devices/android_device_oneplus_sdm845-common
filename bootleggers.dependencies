@@ -1,11 +1,11 @@
 [
   {
-    "repository"  : "franciscofranco/enchilada",
+    "repository"  : "kernel_oneplus_sdm845",
     "target_path" : "kernel/oneplus/sdm845",
      "branch"      : "pie"
   },
   {
-    "repository"  : "AyanC1/vendor_oneplus",
+    "repository"  : "vendor_oneplus",
     "target_path" : "vendor/oneplus",
     "branch"      : "pie"
   },
