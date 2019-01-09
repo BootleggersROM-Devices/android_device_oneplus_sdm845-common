@@ -173,3 +173,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # WFD
 PRODUCT_BOOT_JARS += \
     WfdCommon
+#OnePlusGesture
+PRODUCT_PACKAGES += \
+    OneplusGestures
