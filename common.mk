@@ -126,8 +126,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # QTI
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+#PRODUCT_COPY_FILES += \
+   # $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # Spectrum
 PRODUCT_PACKAGES += \
