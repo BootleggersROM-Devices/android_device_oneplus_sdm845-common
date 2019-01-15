@@ -99,10 +99,6 @@ TARGET_USES_HWC2 := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Lineage Hardware
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
-
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
