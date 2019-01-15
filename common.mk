@@ -62,7 +62,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
-    init.renderzenith.sh
+    init.kronic.rc
 
 # Display
 PRODUCT_PACKAGES += \
@@ -83,9 +83,7 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/fpc1020.idc:system/usr/idc/fpc1020.idc \
     $(LOCAL_PATH)/idc/gf_input.idc:system/usr/idc/gf_input.idc \
-    $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl
 
 # Lights
@@ -105,10 +103,6 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
-
-# Pocket mode
-PRODUCT_PACKAGES += \
-    OnePlusPocketMode
 
 # Power
 PRODUCT_PACKAGES += \
@@ -132,8 +126,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # QTI
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+#PRODUCT_COPY_FILES += \
+   # $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # Spectrum
 PRODUCT_PACKAGES += \
@@ -143,11 +137,9 @@ PRODUCT_PACKAGES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    telephony-ext \
-    ims-ext-common \
-    qti-telephony-common
-    
- PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # tri-state-key
@@ -171,9 +163,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-# WFD
-PRODUCT_BOOT_JARS += \
-    WfdCommon
 #OnePlusGesture
 PRODUCT_PACKAGES += \
     OneplusGestures
