@@ -61,7 +61,8 @@ PRODUCT_PACKAGES_DEBUG += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    init.recovery.qcom.rc
+    init.recovery.qcom.rc \
+    init.renderzenith.sh
 
 # Display
 PRODUCT_PACKAGES += \
@@ -111,7 +112,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.qcom:64
 
 
 # ARStickers
@@ -173,3 +174,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # WFD
 PRODUCT_BOOT_JARS += \
     WfdCommon
+#OnePlusGesture
+PRODUCT_PACKAGES += \
+    OneplusGestures
