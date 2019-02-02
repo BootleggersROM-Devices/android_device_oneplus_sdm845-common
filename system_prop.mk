@@ -28,6 +28,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.camera.preview.size=1920x1080 \
     vendor.camera.aux.packagelist="com.oneplus.camera"
 
+# Debug IMS/VoLTE props
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_disable=0 \
