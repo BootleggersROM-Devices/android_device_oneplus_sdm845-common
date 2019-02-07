@@ -28,6 +28,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.camera.preview.size=1920x1080 \
     vendor.camera.aux.packagelist="com.oneplus.camera"
 
+# Debug IMS/VoLTE props
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.gfx_ubwc_disable=0 \
@@ -68,7 +75,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.ignore_dom_time=10 \
-    ro.telephony.default_network=22,22
+    ro.telephony.default_network=22,22 \
+    persist.radio.rat_on=combine \
+    persist.radio.data_ltd_sys_ind=1 \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.calls.on.ims=1
 
 # Touchscreen
 PRODUCT_PROPERTY_OVERRIDES += \
