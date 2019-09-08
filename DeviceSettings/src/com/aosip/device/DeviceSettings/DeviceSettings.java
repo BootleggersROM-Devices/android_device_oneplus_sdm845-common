@@ -39,7 +39,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-import com.android.internal.util.aosip.FileUtils;
+//import com.android.internal.util.aosip.FileUtils;
 import com.aosip.device.DeviceSettings.Constants;
 
 public class DeviceSettings extends PreferenceFragment
