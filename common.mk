@@ -29,6 +29,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosip
 
+# Properties
+-include $(LOCAL_PATH)/system_prop.mk
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # VNDK
@@ -208,3 +211,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += oneplus-mock
 PRODUCT_BOOT_JARS += oneplus-mock
+
+
+PRODUCT_PACKAGES += \
+    EmptyOverlay
