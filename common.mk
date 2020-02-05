@@ -39,6 +39,9 @@ PRODUCT_PACKAGES += \
     OnePlusIconShapeSquircleOverlay \
     OnePlusIconShapeTeardropOverlay
 
+# Properties
+-include $(LOCAL_PATH)/system_prop.mk
+
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # VNDK
@@ -225,3 +228,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-sdm845-common.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-sdm845-common.xml
 
 
+PRODUCT_PACKAGES += \
+    EmptyOverlay
