@@ -203,6 +203,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ini/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/wifi/WCNSS_qcom_cfg.ini
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
