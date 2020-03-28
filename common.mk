@@ -86,7 +86,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    Snap \
+    ARCore
 
 # Common init scripts
 PRODUCT_PACKAGES += \
