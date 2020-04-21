@@ -1,4 +1,4 @@
-
+#
 #
 # Copyright (C) 2018 The LineageOS Project
 #
@@ -21,13 +21,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
+# Inherit packages from vendor/oneplus/camera
+$(call inherit-product, vendor/oneplus/camera/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosip
-
-# Properties
--include $(LOCAL_PATH)/system_prop.mk
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
@@ -84,9 +84,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera
+# Camera HIDL
 PRODUCT_PACKAGES += \
-    Snap
+    ARCore \
+    GoogleCamera
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/com.google.android.GoogleCamera.xml:system/etc/permissions/com.google.android.GoogleCamera.xml
+
+
+# Camera HIDL
+PRODUCT_PACKAGES += \
+    vendor.oneplus.camera.CameraHIDL@1.0 \
+    vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
+    vendor.oneplus.camera.CameraHIDL-V1.0-java
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -146,6 +157,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    device/oneplus/common
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -190,4 +206,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-sdm845-common.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-sdm845-common.xml
 
-
+PRODUCT_PACKAGES += oneplus-mock
+PRODUCT_BOOT_JARS += oneplus-mock
