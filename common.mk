@@ -97,6 +97,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+#Camera
+PRODUCT_PACKAGES += \
+    ARCore
+
 # Camera HIDL
 PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0 \
