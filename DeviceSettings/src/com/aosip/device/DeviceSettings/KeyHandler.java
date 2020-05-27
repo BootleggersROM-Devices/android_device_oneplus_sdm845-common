@@ -38,6 +38,7 @@ import android.os.PowerManager.WakeLock;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.VibrationEffect;
 import android.provider.Settings;
