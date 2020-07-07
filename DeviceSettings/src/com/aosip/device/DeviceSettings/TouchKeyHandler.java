@@ -229,7 +229,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                 case Constants.ACTION_VOLUME_UP:
                     volumeUp();
                     break;
-                case TouchscreenGestureConstants.ACTION_AMBIENT_DISPLAY:
+                case Constants.ACTION_AMBIENT_DISPLAY:
                     launchDozePulse();
                     break;
             }
