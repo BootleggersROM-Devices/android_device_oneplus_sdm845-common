@@ -21,9 +21,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 
-# Inherit packages from vendor/google/camera
-$(call inherit-product, vendor/google/camera/config.mk)
-
 # Inherit packages from vendor/oneplus/camera
 $(call inherit-product, vendor/oneplus/camera/config.mk)
 
@@ -109,6 +106,11 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libvulkan \
     vendor.display.config@1.0
+
+# Display Calibration
+PRODUCT_PACKAGES += \
+    qdcm_calib_data_samsung_s6e3fc2x01_cmd_mode_dsi_panel.xml \
+    qdcm_calib_data_samsung_sofef00_m_cmd_mode_dsi_panel.xml
 
 # Doze
 PRODUCT_PACKAGES += \
