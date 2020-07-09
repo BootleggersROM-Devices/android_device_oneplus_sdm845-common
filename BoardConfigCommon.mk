@@ -44,7 +44,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 ifeq ($(TARGET_DEVICE),fajita)
 TARGET_KERNEL_CONFIG := shapeless_defconfig
-TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
+TARGET_KERNEL_SOURCE := kernel/oneplus/fajita
 else
 TARGET_KERNEL_CONFIG := kronic_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
